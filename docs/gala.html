@@ -497,10 +497,10 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomzhengzihaosqsHW3tree0aa50e2a785034cc2fca745501203dbc3bd5a6c9targetblank0aa50e2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/zhengzihaosqs/HW3/tree/0aa50e2a785034cc2fca745501203dbc3bd5a6c9" target="_blank">0aa50e2</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomzhengzihaosqsHW3treeff6d1f92d01146911714f25d4c821d239a5ab6a4targetblankff6d1f9a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/zhengzihaosqs/HW3/tree/ff6d1f92d01146911714f25d4c821d239a5ab6a4" target="_blank">ff6d1f9</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomzhengzihaosqsHW3tree0aa50e2a785034cc2fca745501203dbc3bd5a6c9targetblank0aa50e2a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomzhengzihaosqsHW3treeff6d1f92d01146911714f25d4c821d239a5ab6a4targetblankff6d1f9a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -548,6 +548,40 @@ Message
 <tbody>
 <tr>
 <td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/zhengzihaosqs/HW3/blob/ff6d1f92d01146911714f25d4c821d239a5ab6a4/analysis/gala.Rmd" target="_blank">ff6d1f9</a>
+</td>
+<td>
+zhengzihaosqs
+</td>
+<td>
+2019-10-20
+</td>
+<td>
+Simple linear regression
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/zhengzihaosqs/HW3/f83da1698eb0ee0f20976f10f367f195b16d8870/docs/gala.html" target="_blank">f83da16</a>
+</td>
+<td>
+zhengzihaosqs
+</td>
+<td>
+2019-10-20
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
 html
 </td>
 <td>
@@ -589,6 +623,7 @@ Analyze the gala dataset
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<p>At first, we input data from local csv file for further analysis.</p>
 <pre class="r"><code>library(readr)
 mydata &lt;- read.csv(&quot;MyData.csv&quot;)
 mydata</code></pre>
@@ -624,13 +659,13 @@ mydata</code></pre>
 29      Tortuga      16        8    1.24       186     6.8  50.9    17.95
 30         Wolf      21       12    2.85       253    34.1 254.7     2.33</code></pre>
 <p>This dataset describe some information about species diversity on the Galapagos Islands, the first column is the names of the island, and for other columns their meanings are:</p>
-<p>Species–the number of plant species found on the island</p>
-<p>Endemics–the number of endemic species</p>
-<p>Area–the area of the island (km<span class="math inline">\(^2\)</span>)</p>
-<p>Elevation–the highest elevation of the island (m)</p>
-<p>Nearest–the distance from the nearest island (km)</p>
-<p>Scruz–the distance from Santa Cruz island (km)</p>
-<p>Adjacent–the area of the adjacent island (square km)</p>
+<p>Species:–the number of plant species found on the island</p>
+<p>Endemics:–the number of endemic species</p>
+<p>Area:–the area of the island (km<span class="math inline">\(^2\)</span>)</p>
+<p>Elevation:–the highest elevation of the island (m)</p>
+<p>Nearest:–the distance from the nearest island (km)</p>
+<p>Scruz:–the distance from Santa Cruz island (km)</p>
+<p>Adjacent:–the area of the adjacent island (square km)</p>
 <p>We show descriptive statistics for Species and Area:</p>
 <pre class="r"><code>summary(mydata$Species)</code></pre>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -645,8 +680,8 @@ mydata</code></pre>
 <p>Information about mean, median, the minimum and maximum value, quantile points and standard deviation for two columns are shown above.</p>
 <p>Now we are going to add plots to reveal more feature of these two columns.</p>
 <pre class="r"><code>par(mfrow=c(1,2))
-hist(mydata$Species,main=&quot;Histogram of Species&quot;)
-hist(mydata$Endemics,main=&quot;Histogram of Endemics&quot;)</code></pre>
+hist(mydata$Species,main=&quot;Histogram of Species&quot;,xlab=&quot;Species&quot;)
+hist(mydata$Endemics,main=&quot;Histogram of Endemics&quot;,xlab=&quot;Endemics&quot;)</code></pre>
 <p><img src="figure/gala.Rmd/distribution-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-distribution-1">
@@ -685,9 +720,9 @@ zhengzihaosqs
 </table>
 </div>
 </div>
-<p>We plot two histograms to show the distributions of two columns, but we can not see much information from histograms.</p>
+<p>We plot two histograms to show the distributions of two columns, but we can not see much information from histograms. So we decide plot a scatterplot to show the relationship between two columns.</p>
 <pre class="r"><code>par(mfrow=c(1,1))
-plot(mydata$Species,mydata$Endemics,main=&quot;scatterplot of Species and Endemics&quot;)</code></pre>
+plot(mydata$Species,mydata$Endemics,main=&quot;Scatterplot of Species and Endemics&quot;,xlab=&quot;Species&quot;,ylab=&quot;Endemics&quot;)</code></pre>
 <p><img src="figure/gala.Rmd/scatter%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-1">
@@ -726,7 +761,35 @@ zhengzihaosqs
 </table>
 </div>
 </div>
-<p>And we plot a scatterplot to show the relationship between two columns. We can see a positive correlation between them.</p>
+<p>We can see a positive correlation between them.</p>
+<p>Now we run a simple linear regression to estimate the relationship between Endemics and Species</p>
+<pre class="r"><code>lmd&lt;-lm(Endemics~Species,mydata)
+slmd&lt;-summary(lmd)
+slmd</code></pre>
+<pre><code>
+Call:
+lm(formula = Endemics ~ Species, data = mydata)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-14.1469  -3.9305  -0.3517   3.3289  19.7692 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  6.37028    1.52539   4.176 0.000262 ***
+Species      0.23148    0.01079  21.443  &lt; 2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 6.664 on 28 degrees of freedom
+Multiple R-squared:  0.9426,    Adjusted R-squared:  0.9406 
+F-statistic: 459.8 on 1 and 28 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>From the summary information of the regression result, we see that the p-value for intercept and species is 2.615663510^{-4} and 6.472637810^{-19}, which means the covariate and intercept terms are significant.</p>
+<p>The estimated value of intercept is 6.3702808 and the estimated value of Species is 0.2314789. We add the fitted line to the scatterplot:</p>
+<pre class="r"><code>plot(mydata$Species,mydata$Endemics,main=&quot;Scatterplot of Species and Endemics&quot;)
+abline(lmd)</code></pre>
+<p><img src="figure/gala.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>We can see that the linear model fits the data well.</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
