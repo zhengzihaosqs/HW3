@@ -1,0 +1,60 @@
+---
+title: "gala"
+author: "zhengzihaosqs"
+date: "2019-10-20"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+library(readr)
+mydata <- read.csv("MyData.csv")
+mydata
+```
+
+This dataset describe some information about species diversity on the Galapagos Islands, the first column is the names of the island, and for other columns their meanings are: 
+
+Species--the number of plant species found on the island
+
+Endemics--the number of endemic species
+
+Area--the area of the island (km$^2$)
+
+Elevation--the highest elevation of the island (m)
+
+Nearest--the distance from the nearest island (km)
+
+Scruz--the distance from Santa Cruz island (km)
+
+Adjacent--the area of the adjacent island (square km)
+
+We show descriptive statistics for Species and Area:
+
+```{r}
+summary(mydata$Species)
+sd(mydata$Species)
+summary(mydata$Endemics)
+sd(mydata$Endemics)
+```
+
+Information about mean, median, the minimum and maximum value, quantile points and standard deviation for two columns are shown above.
+
+Now we are going to add plots to reveal more feature of these two columns.
+
+```{r distribution}
+par(mfrow=c(1,2))
+hist(mydata$Species,main="Histogram of Species")
+hist(mydata$Endemics,main="Histogram of Endemics")
+```
+
+We plot two histograms to show the distributions of two columns, but we can not see much information from histograms.
+
+```{r scatter plot}
+par(mfrow=c(1,1))
+plot(mydata$Species,mydata$Endemics,main="scatterplot of Species and Endemics")
+```
+
+And we plot a scatterplot to show the relationship between two columns. We can see a positive correlation between them.
