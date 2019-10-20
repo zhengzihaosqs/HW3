@@ -28,6 +28,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -354,7 +356,13 @@ div.tocify {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/zhengzihaosqs/HW3">
+    <span class="fa fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -489,10 +497,10 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong3a5cfea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> 3a5cfea </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomzhengzihaosqsHW3tree0aa50e2a785034cc2fca745501203dbc3bd5a6c9targetblank0aa50e2a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/zhengzihaosqs/HW3/tree/0aa50e2a785034cc2fca745501203dbc3bd5a6c9" target="_blank">0aa50e2</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong3a5cfea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomzhengzihaosqsHW3tree0aa50e2a785034cc2fca745501203dbc3bd5a6c9targetblank0aa50e2a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -500,7 +508,6 @@ Great! You are using Git for version control. Tracking code development and conn
 <pre><code>
 Ignored files:
     Ignored:    .Rproj.user/
-    Ignored:    docs/figure/
 
 </code></pre>
 <p>
@@ -541,10 +548,27 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/zhengzihaosqs/HW3/3676c2b277525c22bbb304622ec8a5401d55e31d/docs/gala.html" target="_blank">3676c2b</a>
+</td>
+<td>
+zhengzihaosqs
+</td>
+<td>
+2019-10-20
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
-3a5cfea
+<a href="https://github.com/zhengzihaosqs/HW3/blob/3a5cfea6e0958a4e70529c6282838378928527c9/analysis/gala.Rmd" target="_blank">3a5cfea</a>
 </td>
 <td>
 zhengzihaosqs
@@ -624,10 +648,84 @@ mydata</code></pre>
 hist(mydata$Species,main=&quot;Histogram of Species&quot;)
 hist(mydata$Endemics,main=&quot;Histogram of Endemics&quot;)</code></pre>
 <p><img src="figure/gala.Rmd/distribution-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-distribution-1">
+Past versions of distribution-1.png
+</button>
+</p>
+<div id="fig-distribution-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/zhengzihaosqs/HW3/blob/3676c2b277525c22bbb304622ec8a5401d55e31d/docs/figure/gala.Rmd/distribution-1.png" target="_blank">3676c2b</a>
+</td>
+<td>
+zhengzihaosqs
+</td>
+<td>
+2019-10-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>We plot two histograms to show the distributions of two columns, but we can not see much information from histograms.</p>
 <pre class="r"><code>par(mfrow=c(1,1))
 plot(mydata$Species,mydata$Endemics,main=&quot;scatterplot of Species and Endemics&quot;)</code></pre>
 <p><img src="figure/gala.Rmd/scatter%20plot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-no-spaces-scatter-plot-1">
+Past versions of “scatter plot-1.png”
+</button>
+</p>
+<div id="fig-no-spaces-scatter-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/zhengzihaosqs/HW3/blob/3676c2b277525c22bbb304622ec8a5401d55e31d/docs/figure/gala.Rmd/scatter plot-1.png" target="_blank">3676c2b</a>
+</td>
+<td>
+zhengzihaosqs
+</td>
+<td>
+2019-10-20
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>And we plot a scatterplot to show the relationship between two columns. We can see a positive correlation between them.</p>
 <br>
 <p>
