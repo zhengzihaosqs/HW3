@@ -9,6 +9,8 @@ editor_options:
 
 ## Introduction
 
+At first, we input data from local csv file for further analysis.
+
 ```{r}
 library(readr)
 mydata <- read.csv("MyData.csv")
@@ -17,19 +19,19 @@ mydata
 
 This dataset describe some information about species diversity on the Galapagos Islands, the first column is the names of the island, and for other columns their meanings are: 
 
-Species--the number of plant species found on the island
+Species:--the number of plant species found on the island
 
-Endemics--the number of endemic species
+Endemics:--the number of endemic species
 
-Area--the area of the island (km$^2$)
+Area:--the area of the island (km$^2$)
 
-Elevation--the highest elevation of the island (m)
+Elevation:--the highest elevation of the island (m)
 
-Nearest--the distance from the nearest island (km)
+Nearest:--the distance from the nearest island (km)
 
-Scruz--the distance from Santa Cruz island (km)
+Scruz:--the distance from Santa Cruz island (km)
 
-Adjacent--the area of the adjacent island (square km)
+Adjacent:--the area of the adjacent island (square km)
 
 We show descriptive statistics for Species and Area:
 
@@ -46,15 +48,34 @@ Now we are going to add plots to reveal more feature of these two columns.
 
 ```{r distribution}
 par(mfrow=c(1,2))
-hist(mydata$Species,main="Histogram of Species")
-hist(mydata$Endemics,main="Histogram of Endemics")
+hist(mydata$Species,main="Histogram of Species",xlab="Species")
+hist(mydata$Endemics,main="Histogram of Endemics",xlab="Endemics")
 ```
 
-We plot two histograms to show the distributions of two columns, but we can not see much information from histograms.
+We plot two histograms to show the distributions of two columns, but we can not see much information from histograms. So we decide plot a scatterplot to show the relationship between two columns.
 
 ```{r scatter plot}
 par(mfrow=c(1,1))
-plot(mydata$Species,mydata$Endemics,main="scatterplot of Species and Endemics")
+plot(mydata$Species,mydata$Endemics,main="Scatterplot of Species and Endemics",xlab="Species",ylab="Endemics")
 ```
 
-And we plot a scatterplot to show the relationship between two columns. We can see a positive correlation between them.
+We can see a positive correlation between them.
+
+Now we run a simple linear regression to estimate the relationship between Endemics and Species
+
+```{r}
+lmd<-lm(Endemics~Species,mydata)
+slmd<-summary(lmd)
+slmd
+```
+
+From the summary information of the regression result, we see that the p-value for intercept and species is `r slmd$coef[1,4]` and `r slmd$coef[2,4]`, which means the covariate and intercept terms are significant. 
+
+The estimated value of intercept is `r slmd$coef[1,1]` and the estimated value of Species is `r slmd$coef[2,1]`. We add the fitted line to the scatterplot:
+
+```{r}
+plot(mydata$Species,mydata$Endemics,main="Scatterplot of Species and Endemics")
+abline(lmd)
+```
+
+We can see that the linear model fits the data well.
